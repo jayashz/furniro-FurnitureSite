@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-family: 'merriweather',sans-serif;
+}
