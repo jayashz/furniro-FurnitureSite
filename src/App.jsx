@@ -2,6 +2,7 @@
 
 import './App.css'
 import Contents from './components/Contents'
+import Footer from './components/Footer'
 import Gallery from './components/Gallery'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
@@ -18,6 +19,7 @@ function App() {
     <Contents />
     <OurProducts />
     <Gallery />
+    <Footer />
     </>
   )
 }
