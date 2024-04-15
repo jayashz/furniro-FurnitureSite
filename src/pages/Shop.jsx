@@ -76,7 +76,7 @@ const Shop = () => {
             <p>Filter</p>
           </div>
         </div>
-        <div className="grid sm:grid-cols-4 gap-4 mt-10 grid-cols-2">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-10 grid-cols-2">
           {products.map((p) => (
             <Product
               img={p.img}
