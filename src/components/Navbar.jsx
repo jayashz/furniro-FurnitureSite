@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="w-full h-[5rem] bg-slate-20 flex items-center justify-between sticky top-0 z-10 backdrop-blur-sm">
         <img src={Navlogo} alt="Brand logo" />
         <div className="flex gap-8">
-          <NavLink
+          <NavLink tag={Link}
             className={({ isActive }) =>
               isActive ? " text-[#B88E2F]" : "text-black"
             }
@@ -20,7 +20,7 @@ const Navbar = () => {
           >
             Home
           </NavLink>
-          <NavLink
+          <NavLink tag={Link}
             className={({ isActive }) =>
               isActive ? " text-[#B88E2F]" : "text-black"
             }
@@ -28,7 +28,7 @@ const Navbar = () => {
           >
             Shop
           </NavLink>
-          <NavLink
+          <NavLink tag={Link}
             className={({ isActive }) =>
               isActive ? " text-[#B88E2F]" : "text-black"
             }
@@ -36,7 +36,7 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          <NavLink
+          <NavLink tag={Link}
             className={({ isActive }) =>
               isActive ? " text-[#B88E2F]" : "text-black"
             }
@@ -49,7 +49,7 @@ const Navbar = () => {
           <MdAccountBox />
           <IoSearchCircleSharp />
           <FaRegHeart />
-          <NavLink  className={({ isActive }) =>
+          <NavLink tag={Link}  className={({ isActive }) =>
               isActive ? " text-[#B88E2F]" : "text-black"
             }
             to="/cart">

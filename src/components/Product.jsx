@@ -4,7 +4,7 @@ import { CartContext } from '../store/cart-context';
 
 const Product = ({img, name, des, price, id}) => {
  
-  const {addItemToCart}=useContext(CartContext);
+  const {addItemToCart} = useContext(CartContext);
   return (
     <>
     <div className='relative hover:shadow-md hover:scale-105 duration-100'>

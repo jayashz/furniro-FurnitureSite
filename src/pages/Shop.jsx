@@ -1,69 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "../components/Navbar";
 import { GrSort } from "react-icons/gr";
-import productImg from "../assets/content-img/Ecommerce UI Kit Image 1.png";
 import Footer from '../components/Footer'
 import Product from "../components/Product";
+import {PRODUCTS} from '../components/dummy-products';
+
 
 const Shop = () => {
-  const products = [
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-    {
-      img: productImg,
-      name: "Sylterine",
-      des: "Stylish cafe chair",
-      price: "Rs.5000",
-      id: Math.random() * 100,
-    },
-  ];
+
   return (
     <>
       <div className="flex flex-col items-center">
@@ -81,7 +25,7 @@ const Shop = () => {
           </div>
         </div>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-4 mt-10 grid-cols-2">
-          {products.map((p) => (
+          {PRODUCTS.map((p) => (
             <Product
               {...p}
               key={p.id}
