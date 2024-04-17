@@ -6,4 +6,5 @@ body{
     padding-left: 3rem;
     padding-right: 3rem;
     font-family: 'merriweather',sans-serif;
+    scroll-behavior: smooth;
 }

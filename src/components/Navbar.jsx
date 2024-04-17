@@ -4,7 +4,7 @@ import { MdAccountBox } from "react-icons/md";
 import { IoSearchCircleSharp } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -49,7 +49,12 @@ const Navbar = () => {
           <MdAccountBox />
           <IoSearchCircleSharp />
           <FaRegHeart />
+          <NavLink className={({ isActive }) =>
+              isActive ? " text-[#B88E2F]" : "text-black"
+            }
+            to="/cart">
           <FaCartShopping />
+          </NavLink>
         </div>
       </div>
     </>

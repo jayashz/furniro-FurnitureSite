@@ -12,52 +12,56 @@ const Shop = () => {
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
-      id: Math.round * 100,
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
-      id: Math.round * 100,
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
-      id: Math.round * 100,
+      id: Math.random() * 100,
     },
     {
       img: productImg,
       name: "Sylterine",
       des: "Stylish cafe chair",
       price: "Rs.5000",
-      id: Math.round * 100,
+      id: Math.random() * 100,
     },
   ];
   return (
@@ -83,7 +87,8 @@ const Shop = () => {
               name={p.name}
               des={p.des}
               price={p.price}
-              key={p.key}
+              id={p.id}
+              key={p.id}
             />
           ))}
         </div>
