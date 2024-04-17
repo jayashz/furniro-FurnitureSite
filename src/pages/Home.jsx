@@ -5,7 +5,8 @@ import Contents from '../components/Contents'
 import OurProducts from '../components/OurProducts'
 import Gallery from '../components/Gallery'
 import Footer from '../components/Footer'
-import { CartContext } from '../store/cart-context'
+import { CartContext } from '../store/cart-context';
+import { useState } from 'react'
 
 const Home = () => {
   
