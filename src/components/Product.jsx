@@ -2,10 +2,8 @@ import React, { useContext } from 'react'
 import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { CartContext } from '../store/cart-context';
 
-const Product = ({img, name, des, price, id, onAdd}) => {
- const onAddCart = ()=>{
-  onAdd(id);
- };
+const Product = ({img, name, des, price, id}) => {
+ 
   const {addItemToCart}=useContext(CartContext);
   return (
     <>

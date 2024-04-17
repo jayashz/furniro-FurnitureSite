@@ -6,9 +6,68 @@ import OurProducts from '../components/OurProducts'
 import Gallery from '../components/Gallery'
 import Footer from '../components/Footer'
 import { CartContext } from '../store/cart-context';
-import { useState } from 'react'
+import { useState } from 'react';
+import productImg from '../assets/content-img/Ecommerce UI Kit Image 1.png'
 
 const Home = () => {
+  const products=[
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+    {
+      img: productImg,
+      name: 'Sylterine',
+      des:  'Stylish cafe chair',
+      price: 'Rs.5000',
+      id: Math.random()*100
+    },
+  ];
   
   const [cart,setCart]=useState([]);
 
@@ -47,7 +106,7 @@ const Home = () => {
       <Navbar />
       <Hero />
       <Contents />
-      <OurProducts  />
+      <OurProducts data={products}  />
       <Gallery />
       <Footer />
     </CartContext.Provider>
