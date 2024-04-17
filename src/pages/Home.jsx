@@ -16,28 +16,28 @@ const Home = () => {
       name: 'Sylterine',
       des:  'Stylish cafe chair',
       price: 'Rs.5000',
-      id: Math.random()*100
+      id: '1',
     },
     {
       img: productImg,
       name: 'Sylterine',
       des:  'Stylish cafe chair',
       price: 'Rs.5000',
-      id: Math.random()*100
+      id: '2',
     },
     {
       img: productImg,
       name: 'Sylterine',
       des:  'Stylish cafe chair',
       price: 'Rs.5000',
-      id: Math.random()*100
+      id: '3,'
     },
     {
       img: productImg,
       name: 'Sylterine',
       des:  'Stylish cafe chair',
       price: 'Rs.5000',
-      id: Math.random()*100
+      id: '4',
     },
     {
       img: productImg,
@@ -72,13 +72,14 @@ const Home = () => {
   const [cart,setCart]=useState([]);
 
   const addToCartHandler = (id)=>{
-    console.log('Added');
     setCart((prevCartItems)=>{
-      const updatedCart=[...prevCartItems.items];
+
+      const updatedCart=[...prevCartItems];
 
       const existingCartItemsIndex=updatedCart.findIndex((cartItem)=>cartItem.id===id);
       const existingCartItems= updatedCart[existingCartItemsIndex];
-      if(existingCartItemsIndex){
+
+      if(existingCartItems){
         const updatedItem={
           ...existingCartItems,
           quantity: existingCartItems.quantity+1,
@@ -93,20 +94,23 @@ const Home = () => {
           des: product.des,
           price: product.price,
           img: product.img,
+          quantity: 1,
         })
       }
+      return updatedCart;
     });
   };
   const ctxValue= {
     items: cart.items,
     addItemToCart: addToCartHandler
-  }
+  };
+  console.log(cart);
   return (
-    <CartContext.Provider value={{ctxValue}}>
+    <CartContext.Provider value={ctxValue}>
       <Navbar />
       <Hero />
       <Contents />
-      <OurProducts data={products}  />
+      <OurProducts data={products} />
       <Gallery />
       <Footer />
     </CartContext.Provider>

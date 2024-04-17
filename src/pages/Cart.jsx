@@ -1,9 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { CartContext } from "../store/cart-context";
 import Navbar from "../components/Navbar";
 
 const Cart = () => {
-    const cartCtx=useContext(CartContext);
+    const {items} = useContext(CartContext);
+    if(items.length===0){
+
+    }
+    console.log(items)
   return (
     <>
       <Navbar />

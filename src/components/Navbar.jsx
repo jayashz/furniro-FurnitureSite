@@ -49,7 +49,7 @@ const Navbar = () => {
           <MdAccountBox />
           <IoSearchCircleSharp />
           <FaRegHeart />
-          <NavLink className={({ isActive }) =>
+          <NavLink  className={({ isActive }) =>
               isActive ? " text-[#B88E2F]" : "text-black"
             }
             to="/cart">
