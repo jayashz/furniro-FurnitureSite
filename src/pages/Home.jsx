@@ -8,20 +8,16 @@ import Footer from "../components/Footer";
 import { CartContext } from "../store/cart-context";
 import { useState } from "react";
 import { PRODUCTS } from "../components/dummy-products";
-import Shop from "./Shop";
+
 
 const Home = () => {
+
   const [cart, setCart] = useState([]);
 
   useEffect(()=>{
-    const data =window.localStorage.getItem('data');
-
-    if(data!==null) setCart(JSON.parse(data));
+    const data = localStorage.getItem("Thedata");
+    setCart(JSON.parse(data));
   },[]);
-  
-  useEffect(()=>{
-    window.localStorage.setItem('data',JSON.stringify(cart));
-  },[cart])
 
   const addToCartHandler = (id) => {
     setCart((prevCartItems) => {
@@ -49,14 +45,15 @@ const Home = () => {
           quantity: 1,
         });
       }
+      localStorage.setItem("Thedata",JSON.stringify(updatedCart));
       return updatedCart;
     });
   };
+  console.log(cart);
   const ctxValue = {
     items: cart.items,
     addItemToCart: addToCartHandler,
   };
-  console.log(cart);
   return (
     <CartContext.Provider value={ctxValue}>
       <Navbar />
@@ -65,7 +62,6 @@ const Home = () => {
       <Ourproducts />
       <Gallery />
       <Footer />
-
     </CartContext.Provider>
   );
 };
