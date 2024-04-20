@@ -14,6 +14,17 @@ const Cart = () => {
     setCart(JSON.parse(data));
   }, []);
 
+  const deleteCartHandler=(id)=>{
+    console.log("clicked")
+    setCart((prevCartItems)=>{
+      const updatedCart = prevCartItems.filter(item =>item.id!= id);
+      console.log(updatedCart);
+      localStorage.setItem("Thedata",JSON.stringify(updatedCart));
+      return updatedCart;
+  
+    });
+  };
+
   return (
     <>
       <Navbar />
@@ -35,7 +46,7 @@ const Cart = () => {
               <h4>Subtotal</h4>
             </div>
             <div>
-                {cart.map((i)=> <Cart_items key={i.id} {...i}/> )}
+                {cart.map((i)=> <Cart_items onDel={deleteCartHandler} key={i.id} {...i}/> )}
             </div>
           </div>
           <div className="basis-1/4 bg-[#F9F1E7] h-[20rem] p-12 flex items-center flex-col">
