@@ -1,5 +1,5 @@
-import React, { useContext, useState, useEffect } from "react";
-import { CartContext } from "../store/cart-context";
+import React, { useState, useEffect } from "react";
+
 import Navbar from "../components/Navbar";
 import Cart_items from "../components/Cart_items";
 
@@ -28,15 +28,14 @@ const Cart = () => {
       ) : (
         <div className=" flex p-6 mt-12 gap-3 ">
           <div className=" basis-[70%]">
-            <div className="flex bg-[#F9F1E7] h-14 items-center p-6 gap-10 justify-between">
-              <h4 className="ml-20">Product</h4>
+            <div className="flex bg-[#F9F1E7] h-14 items-center gap-10 justify-between px-[7rem]">
+              <h4>Product</h4>
               <h4>Price</h4>
               <h4>Quantity</h4>
               <h4>Subtotal</h4>
             </div>
             <div>
                 {cart.map((i)=> <Cart_items key={i.id} {...i}/> )}
-
             </div>
           </div>
           <div className="basis-1/4 bg-[#F9F1E7] h-[20rem] p-12 flex items-center flex-col">

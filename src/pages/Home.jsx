@@ -49,10 +49,22 @@ const Home = () => {
       return updatedCart;
     });
   };
-  console.log(cart);
+
+  const deleteCartHandler=(id)=>{
+    console.log("clicked")
+    setCart((prevCartItems)=>{
+      const updatedCart = prevCartItems.filter(item =>item.id!= id);
+      console.log(updatedCart);
+      localStorage.setItem("Thedata",JSON.stringify(updatedCart));
+      return updatedCart;
+
+    });
+  };
+
   const ctxValue = {
     items: cart.items,
     addItemToCart: addToCartHandler,
+    deleteItemCart: deleteCartHandler,
   };
   return (
     <CartContext.Provider value={ctxValue}>
