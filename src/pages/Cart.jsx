@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Navbar from "../components/Navbar";
 import Cart_items from "../components/Cart_items";
+import Footer from "../components/Footer"
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -15,13 +16,33 @@ const Cart = () => {
   }, []);
 
   const deleteCartHandler=(id)=>{
-    console.log("clicked")
     setCart((prevCartItems)=>{
       const updatedCart = prevCartItems.filter(item =>item.id!= id);
-      console.log(updatedCart);
+
       localStorage.setItem("Thedata",JSON.stringify(updatedCart));
       return updatedCart;
   
+    });
+    
+  };
+  const editQuantity=(id,q)=>{
+    setCart((prevCartItems)=>{
+      const updatedItems=[...prevCartItems];
+
+
+      const updatedItemIndex=updatedItems.findIndex((i)=>i.id===id);
+      const updatedItem={
+        ...updatedItems[updatedItemIndex],
+      }
+      updatedItem.quantity+= q;
+      if(updatedItem.quantity<=0){
+        updatedItems.splice(updatedItemIndex,1);
+      }
+      else{
+        updatedItems[updatedItemIndex]= updatedItem;
+      }
+
+      return updatedItems;
     });
   };
 
@@ -46,22 +67,24 @@ const Cart = () => {
               <h4>Subtotal</h4>
             </div>
             <div>
-                {cart.map((i)=> <Cart_items onDel={deleteCartHandler} key={i.id} {...i}/> )}
+                {cart.map((i)=> <Cart_items onEditQuantity={editQuantity} onDel={deleteCartHandler} key={i.id} {...i}/> )}
             </div>
           </div>
-          <div className="basis-1/4 bg-[#F9F1E7] h-[20rem] p-12 flex items-center flex-col">
-            <h3>Cart totals</h3>
-            <div className="flex">
-              <p>Subtotal</p>
-              <p>{totalAmt}</p>
+          <div className="basis-1/4 bg-[#F9F1E7] h-[20rem] p-10 flex items-center flex-col">
+            <h3 className=" text-[32px] font-semibold">Cart totals</h3>
+            <div className="flex w-full gap-2 justify-between mt-7">
+              <p className=" font-bold">Subtotal</p>
+              <p>Rs.{totalAmt}</p>
             </div>
-            <div className="flex">
-              <p>Total</p>
-              <p>{totalAmt}</p>
+            <div className="flex gap-2 justify-between w-full mt-5 items-center">
+              <p className="font-bold">Total</p>
+              <p className=" text-2xl">Rs.{totalAmt}</p>
             </div>
+            <button className="border-2 border-black rounded-lg px-5 py-1 mt-8">Check Out</button>
           </div>
         </div>
       )}
+      <Footer />
     </>
   );
 };

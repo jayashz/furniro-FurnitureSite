@@ -9,6 +9,7 @@ import { CartContext } from "../store/cart-context";
 
 import { useState,useEffect } from "react";
 import { PRODUCTS } from "../components/dummy-products";
+import Shop from "./Shop";
 
 
 
@@ -67,6 +68,7 @@ const ctxValue = {
       <Ourproducts />
       <Gallery />
       <Footer />
+      {false && <Shop/>}
     </CartContext.Provider>
   );
 };
