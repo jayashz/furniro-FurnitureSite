@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import Cart_items from "../components/Cart_items";
 import Footer from "../components/Footer"
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const [cart, setCart] = useState([]);
@@ -80,7 +81,9 @@ const Cart = () => {
               <p className="font-bold">Total</p>
               <p className=" text-2xl">Rs.{totalAmt}</p>
             </div>
-            <button className="border-2 border-black rounded-lg px-5 py-1 mt-8">Check Out</button>
+            <NavLink to="/check-out">
+            <button className="border-2 border-black rounded-lg px-5 py-1 mt-8" >Check Out</button>
+            </NavLink>
           </div>
         </div>
       )}
