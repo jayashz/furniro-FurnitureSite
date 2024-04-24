@@ -14,6 +14,7 @@ const OurProducts = () => {
             {PRODUCTS.map((p)=><Product {...p} key={p.id} />)}
         </div>
           <button className='bg-[#B88E2F] rounded-3xl px-5 py-1 mt-5'>Show more</button>
+          
       </div>
     </>
 
